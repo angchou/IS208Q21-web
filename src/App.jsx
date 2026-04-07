@@ -1,16 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./pages/homepage";
-import AboutUs from "./pages/about_us";
-import Project from "./pages/project";
-import Progress from "./pages/progress";
-import ProjectAgreement from "./pages/project_argeement";
-
-import NavBar from "./components/navbar";
-import Footer from "./components/footer";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen flex flex-col">
         <NavBar />
 
@@ -26,7 +18,7 @@ function App() {
 
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
