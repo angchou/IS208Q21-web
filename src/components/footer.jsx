@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/uit_logo.png";
 
 export default function Footer() {
   const items = [
@@ -16,7 +17,7 @@ export default function Footer() {
     <footer className="bg-black flex flex-col justify-center items-center py-15">
       <div className="max-w-5xl text-white grid md:grid-cols-3">
         <div className="flex flex-col justify-center mb-10">
-          <img src="src\assets\uit_logo.png" alt="" className="w-70 mb-5" />
+          <img src={logo} alt="" className="w-70 mb-5" />
           <h1 className="font-bold text-orange-500 mb-2">404NotFound</h1>
           <p>Even when the link breaks,</p>
           <p>our connection doesn't.</p>
