@@ -139,7 +139,7 @@ export default function Project() {
         })}
       </div>
 
-      <div className="max-w-7xl flex flex-col gap-6 p-8">
+      <div className="max-w-7xl flex flex-col gap-6 p-8 -z-1">
         {sections.map((item, index) => (
           <div
             key={index}
