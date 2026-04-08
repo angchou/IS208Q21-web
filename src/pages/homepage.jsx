@@ -4,11 +4,11 @@ export default function Homepage() {
   return (
     <div className="w-full px-4 mb-20">
       <div className="mt-32 md:mt-60 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 max-w-2xl mx-auto">
-        <div className="w-full max-w-xs md:max-w-md">
+        <div className="w-full max-w-xs md:max-w-md group">
           <img
             src={homepageLogo}
             alt=""
-            className="w-full h-auto object-cover animate-float hover:rotate-6 transition"
+            className="w-full h-auto object-cover animate-float group-hover:rotate-6 transition"
           />
         </div>
         <div className="text-center md:text-left">

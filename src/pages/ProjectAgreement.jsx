@@ -16,7 +16,12 @@ export default function ProjectAgreement() {
         </p>
       </div>
 
-      <iframe src={project_agreement} className="w-250 h-screen" />
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <iframe
+          src={project_agreement}
+          className="w-full h-[90vh] rounded-xl shadow-lg"
+        />
+      </div>
     </div>
   );
 }
