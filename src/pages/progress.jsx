@@ -146,7 +146,7 @@ export default function Progress() {
                 }`}
               >
                 {/* Dot */}
-                <div className="absolute left-1/2 w-4 h-4 bg-orange-500 rounded-full -translate-x-1/2 z-10"></div>
+                <div className="absolute left-1/2 w-4 h-4 bg-orange-500 rounded-full -translate-x-1/2 z-1"></div>
 
                 <div
                   className="w-full md:w-1/2 flex justify-center md:px-4 cursor-pointer"
@@ -187,8 +187,8 @@ export default function Progress() {
 
       {selectedStep && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-2">
-          <div className="bg-white rounded-2xl max-w-2xl w-full relative animate-fadeIn">
-            <div className="w-full bg-[#ED7542] p-6 rounded-t-2xl text-white">
+          <div className="bg-white rounded-2xl max-w-2xl w-full relative animate-fadeIn max-h-[90vh] flex flex-col">
+            <div className="w-full bg-[#ED7542] p-6 rounded-t-2xl text-white shrink-0">
               <IoCloseSharp
                 onClick={() => setSelectedStep(null)}
                 className="absolute top-3 right-3 hover:rotate-10 size-7"
@@ -201,15 +201,17 @@ export default function Progress() {
               <span className="font-bold text-xl">{selectedStep.title}</span>
             </div>
 
-            <div className="w-full p-6 rounded-b-2xl text-black">
+            <div className="w-full p-6 rounded-b-2xl text-black overflow-y-auto">
               {selectedStep.detail_desc}
+
               <div className="flex flex-col">
                 <div className="flex gap-3 mt-4">
-                  <SlNote className="text-orange-500 size-6 mt-1"></SlNote>
+                  <SlNote className="text-orange-500 size-6 mt-1" />
                   <span className="font-semibold text-lg text-[#ED7542]">
                     To-do list
                   </span>
                 </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                   {selectedStep.todo.map((td, index) => (
                     <div key={index} className="flex gap-3">
@@ -227,6 +229,7 @@ export default function Progress() {
                     Tài liệu liên quan
                   </span>
                 </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
                   {selectedStep.links.map((link, index) => (
                     <div key={index}>
