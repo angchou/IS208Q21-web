@@ -148,18 +148,16 @@ export default function Progress() {
                 {/* Dot */}
                 <div className="absolute left-1/2 w-4 h-4 bg-orange-500 rounded-full -translate-x-1/2 z-1"></div>
 
-                <div
-                  className="w-full md:w-1/2 flex justify-center md:px-4 cursor-pointer"
-                  onClick={() => setSelectedStep(step)}
-                >
+                <div className="w-full md:w-1/2 flex justify-center md:px-4">
                   <div
-                    className={`max-w-md w-full bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+                    className={`cursor-pointer max-w-md w-full bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
                     ${
                       index % 2 === 0
                         ? "md:ml-auto md:pr-8"
                         : "md:mr-auto md:pl-8"
                     }
                     `}
+                    onClick={() => setSelectedStep(step)}
                   >
                     <span className="text-sm text-orange-500 font-semibold">
                       {step.time}
