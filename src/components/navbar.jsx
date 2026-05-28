@@ -1,10 +1,17 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const repoLinks = {
+    frontend: "https://github.com/angchou/ClientPhungLoc",
+    backend: "https://github.com/angchou/ServerPhungLoc",
+  };
 
   const items = [
     { id: "home", label: "Trang chủ", path: "/home" },
@@ -17,6 +24,16 @@ export default function NavBar() {
       path: "/project_agreement",
     },
   ];
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="flex justify-between shadow-xl bg-[#F8F8F8] items-center px-4 md:px-10 fixed w-full z-10">
@@ -42,10 +59,44 @@ export default function NavBar() {
         ))}
       </div>
 
-      <div className="hidden md:block">
-        <button className="rounded-lg border-2 border-orange-400 text-orange-500 px-6 py-1 text-lg font-bold hover:text-white hover:border-orange-300 hover:bg-gradient-to-r from-orange-500 via-orange-400 to-white transition-all cursor-pointer">
-          Liên hệ
+      <div className="hidden md:block relative" ref={dropdownRef}>
+        <button
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          className="flex text-sm items-center gap-1 hover:bg-orange-500 hover:text-white border border-orange-400 text-orange-500 px-3 py-1 font-semibold transition-all cursor-pointer"
+        >
+          Repository github
+          <ChevronDown
+            size={18}
+            className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+          />
         </button>
+
+        <div
+          className={`absolute right-0 mt-2 w-48 bg-white shadow-lg border border-gray-100 transition-all duration-200 transform origin-top-right ${
+            dropdownOpen
+              ? "opacity-100 scale-100 visible"
+              : "opacity-0 scale-95 invisible"
+          }`}
+        >
+          <a
+            href={repoLinks.frontend}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setDropdownOpen(false)}
+            className="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-orange-500 font-medium transition-colors"
+          >
+            Frontend Repository
+          </a>
+          <a
+            href={repoLinks.backend}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setDropdownOpen(false)}
+            className="block px-4 py-2.5 text-gray-700 hover:bg-orange-50 hover:text-orange-500 font-medium transition-colors"
+          >
+            Backend Repository
+          </a>
+        </div>
       </div>
 
       <button className="md:hidden" onClick={() => setOpen(!open)}>
@@ -74,9 +125,28 @@ export default function NavBar() {
           </NavLink>
         ))}
 
-        <button className="rounded-lg border-2 border-orange-400 text-orange-500 px-6 py-1 text-lg font-bold hover:text-white hover:border-orange-300 hover:bg-gradient-to-r from-orange-500 via-orange-400 to-white transition-all cursor-pointer">
-          Liên hệ
-        </button>
+        <hr className="border-gray-200 my-1" />
+        <div className="flex flex-col gap-2">
+          <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            Repositories
+          </p>
+          <a
+            href={repoLinks.frontend}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-bold text-gray-700 hover:text-orange-500"
+          >
+            Frontend GitHub
+          </a>
+          <a
+            href={repoLinks.backend}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-bold text-gray-700 hover:text-orange-500"
+          >
+            Backend GitHub
+          </a>
+        </div>
       </div>
     </nav>
   );

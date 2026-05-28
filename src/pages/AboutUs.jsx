@@ -63,6 +63,20 @@ export default function AboutUs() {
           cản nào là không thể vượt qua để tạo ra những sản phẩm và kết quả xuất
           sắc nhất.
         </p>
+
+        <p className="text-justify text-lg max-w-3xl">
+          Thiết kế trang web của nhóm lấy ý tưởng hoàn toàn từ{" "}
+          <a
+            href="https://3p1n.github.io/Project_IS208/timeline"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-orange-500"
+          >
+            3P1N
+          </a>
+          . Thank you so much because we don't know how to design something good
+          :D
+        </p>
       </div>
 
       <div className="flex flex-col gap-10 justify-center items-center w-full max-w-4xl p-5">

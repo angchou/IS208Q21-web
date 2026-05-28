@@ -14,7 +14,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black flex flex-col justify-center items-center py-15">
+    <footer className="bg-black flex flex-col justify-center items-center py-10 px-5">
       <div className="max-w-5xl text-white grid md:grid-cols-3">
         <div className="flex flex-col justify-center mb-10">
           <img src={logo} alt="" className="w-70 mb-5" />
@@ -46,8 +46,8 @@ export default function Footer() {
         <div className="flex flex-col justify-center mb-10">
           <h1 className="font-semibold text-orange-500 mb-3">Giới thiệu</h1>
           <p>Địa chỉ: Khu phố 34, Phường Linh Xuân, Thành phố Hồ Chí Minh.</p>
-          <p>Phone: (+84) 769 338 271</p>
-          <p>Email: 24520445@gm.uit.edu.vn</p>
+          <p>Phone: (+84) 778 467 024</p>
+          <p>Email: 24520037@gm.uit.edu.vn</p>
         </div>
       </div>
     </footer>

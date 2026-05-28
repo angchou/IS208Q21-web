@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Homepage from "./pages/Homepage";
 import AboutUs from "./pages/AboutUs";
@@ -15,7 +15,7 @@ function App() {
 
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route index element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<Homepage />} />
             <Route path="/about_us" element={<AboutUs />} />
             <Route path="/project" element={<Project />} />

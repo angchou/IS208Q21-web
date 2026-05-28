@@ -131,8 +131,6 @@ export default function Project() {
                 </h2>
 
                 <p className="text-lg text-center mt-2">{item.desc}</p>
-
-                <button className="pt-10 mt-auto">Đọc thêm &gt;</button>
               </div>
             </div>
           );

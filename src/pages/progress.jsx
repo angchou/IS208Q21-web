@@ -6,6 +6,7 @@ import { SlNote } from "react-icons/sl";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { FaLink } from "react-icons/fa6";
 import { CiFileOn } from "react-icons/ci";
+import { Download } from "lucide-react";
 
 // Progress 1
 import BienBan1 from "../assets/files/progress1/BienBan1.pdf";
@@ -24,6 +25,33 @@ import DanhSachTaiNguyen from "../assets/files/progress2/DanhSachTaiNguyen.pdf";
 import PDM from "../assets/files/progress2/PDM.pdf";
 import WBS from "../assets/files/progress2/WBS_Gantt.pdf";
 import YeuCauChucNang from "../assets/files/progress2/YeuCauChucNang.pdf";
+
+// Progress 3
+import BaoCaoEMV from "../assets/files/progress3/BaoCaoEMV.pdf";
+import BienBan3 from "../assets/files/progress3/BienBan3.pdf";
+import CDB from "../assets/files/progress3/CDB.pdf";
+import DieuChinh from "../assets/files/progress3/DieuChinh.pdf";
+import EVM from "../assets/files/progress3/EVM.pdf";
+import LinkRepo from "../assets/files/progress3/LinkRepo.pdf";
+import PhanCong3 from "../assets/files/progress3/LinkRepo.pdf";
+import WBSUpdateCost from "../assets/files/progress3/LinkRepo.pdf";
+import WBSSauThayDoi from "../assets/files/progress3/WBSSauThayDoi.pdf";
+import LucDau from "../assets/files/progress3/LucDau.pdf";
+import Act from "../assets/files/progress3/Act.pdf";
+import Sequence from "../assets/files/progress3/Sequence.pdf";
+import Class from "../assets/files/progress3/Class.pdf";
+
+// Progress 4
+import CacCongCuSuDung from "../assets/files/progress4/CacCongCuSuDung.pdf";
+import CacQuyetDinh from "../assets/files/progress4/CacQuyetDinh.pdf";
+import QuanLyChatLuong from "../assets/files/progress4/QuanLyChatLuong.pdf";
+import QuanLyLichBieu from "../assets/files/progress4/QuanLyLichBieu.pdf";
+import QuanLyMuaSam from "../assets/files/progress4/QuanLyMuaSam.pdf";
+import QuanLyNguonLuc from "../assets/files/progress4/QuanLyNguonLuc.pdf";
+import QuanLyPhamVi from "../assets/files/progress4/QuanLyPhamVi.pdf";
+import QuanLyRuiRo from "../assets/files/progress4/QuanLyRuiRo.pdf";
+import QuanLyTichHop from "../assets/files/progress4/QuanLyTichHop.pdf";
+import QuanLyTruyenThong from "../assets/files/progress4/QuanLyTruyenThong.pdf";
 
 export default function Progress() {
   const [selectedStep, setSelectedStep] = useState(null);
@@ -126,16 +154,151 @@ export default function Progress() {
         },
       ],
     },
+    {
+      title: "Phân tích thiết kế",
+      time: "14/05/2026",
+      desc: "Thiết kế hệ thống và hoàn thiện kế hoạch dự án",
+      detail_desc: (
+        <div className="text-lg">
+          <span className="font-bold">Mô tả</span>: Giai đoạn tập trung vào việc
+          thiết kế chi tiết hệ thống, hoàn thiện kế hoạch quản lý dự án, phân
+          công công việc và chuẩn bị cho triển khai sản phẩm.
+        </div>
+      ),
+      todo: [
+        "Thiết kế các Activity Diagram",
+        "Thiết kế các Sequence Diagram",
+        "Thiết kế các Class Diagram",
+        "Báo cáo EVM",
+        "Xác định những điều chỉnh so với Lab 1 và Lab 2",
+      ],
+      links: [
+        {
+          name: "Biên bản họp nhóm lần 3",
+          file: BienBan3,
+        },
+        {
+          name: "Activity Diagram",
+          file: Act,
+        },
+        {
+          name: "Sequence Diagram",
+          file: Sequence,
+        },
+        {
+          name: "Class Diagram",
+          file: Class,
+        },
+        {
+          name: "Báo cáo EVM Dự án Phụng Lộc",
+          file: BaoCaoEMV,
+        },
+        {
+          name: "EVM",
+          file: EVM,
+        },
+        {
+          name: "CDB",
+          file: CDB,
+        },
+        {
+          name: "LINK REPO",
+          file: LinkRepo,
+        },
+        {
+          name: "Những điều chỉnh so với Lab 1 và Lab 2",
+          file: DieuChinh,
+        },
+        {
+          name: "WBS",
+          file: WBS,
+        },
+      ],
+    },
+    {
+      title: "Quản lý dự án",
+      time: "28/05/2026",
+      desc: "Lập kế hoạch và tổ chức thực hiện dự án hiệu quả",
+      detail_desc: (
+        <div className="text-lg">
+          <span className="font-bold">Mô tả</span>: Giai đoạn tập trung vào việc
+          xây dựng và hoàn thiện kế hoạch quản lý dự án, phân công nhiệm vụ cho
+          các thành viên, giám sát tiến độ và đảm bảo các nguồn lực cần thiết
+          cho việc triển khai và vận hành sản phẩm.
+        </div>
+      ),
+      todo: [
+        "Quản lý phạm vi",
+        "Quản lý lịch biểu",
+        "Quản lý chi phí",
+        "Quản lý chất lượng",
+        "Quản lý nhân lực",
+        "Quản lý rủi ro",
+        "Quản lý các bên liên quan",
+        "Quản lý mua sắm",
+        "Quản lý truyền thông",
+        "Quản lý tích hợp dự án",
+        "Các công cụ sử dụng để quản lý dự án",
+      ],
+      links: [
+        {
+          name: "Quản lý phạm vi",
+          file: QuanLyPhamVi,
+        },
+        {
+          name: "Quản lý lịch biểu",
+          file: QuanLyLichBieu,
+        },
+        {
+          name: "Quản lý chi phí",
+          file: QuanLyChatLuong,
+        },
+        {
+          name: "Quản lý chất lượng",
+          file: QuanLyChatLuong,
+        },
+        {
+          name: "Quản lý nhân lực",
+          file: QuanLyChatLuong,
+        },
+        {
+          name: "Quản lý rủi ro",
+          file: QuanLyRuiRo,
+        },
+        {
+          name: "Quản lý mua sắm",
+          file: QuanLyMuaSam,
+        },
+        {
+          name: "Quản lý truyền thông",
+          file: QuanLyTruyenThong,
+        },
+        {
+          name: "Quản lý tich hợp dự án",
+          file: QuanLyTichHop,
+        },
+        {
+          name: "Các quyết định quản lý về kiến trúc, công nghệ, công cụ",
+          file: CacQuyetDinh,
+        },
+        {
+          name: "Các công cụ sử dụng để quản lý dự án",
+          file: CacCongCuSuDung,
+        },
+      ],
+    },
   ];
 
   return (
     <>
       <div className="px-4 md:px-[148px] pt-32 pb-20 bg-gray-50 flex flex-col items-center">
-        <h1 className="text-4xl font-bold mb-16 text-center">Lộ trình dự án</h1>
+        <h1 className="text-3xl font-black mb-16 text-center">
+          Lộ trình dự án
+        </h1>
 
         <div className="relative w-full">
           {/* Line */}
-          <div className="absolute left-1/2 top-0 h-full w-1 bg-orange-300 -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-orange-200 -translate-x-1/2"></div>
 
           <div className="space-y-16">
             {steps.map((step, index) => (
@@ -185,11 +348,11 @@ export default function Progress() {
 
       {selectedStep && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-2">
-          <div className="bg-white rounded-2xl max-w-2xl w-full relative animate-fadeIn max-h-[90vh] flex flex-col">
-            <div className="w-full bg-[#ED7542] p-6 rounded-t-2xl text-white shrink-0">
+          <div className="bg-white rounded-xl max-w-2xl w-full relative animate-fadeIn max-h-[90vh] flex flex-col">
+            <div className="w-full bg-[#ED7542] p-6 rounded-t-xl text-white shrink-0">
               <IoCloseSharp
                 onClick={() => setSelectedStep(null)}
-                className="absolute top-3 right-3 hover:rotate-10 size-7"
+                className="absolute top-3 right-3 hover:rotate-360 transtion duration-450 hover:scale-150 size-7"
               />
 
               <div className="flex gap-3 mb-2">
@@ -199,7 +362,7 @@ export default function Progress() {
               <span className="font-bold text-xl">{selectedStep.title}</span>
             </div>
 
-            <div className="w-full p-6 rounded-b-2xl text-black overflow-y-auto">
+            <div className="w-full p-6 rounded-b-xl text-black overflow-y-auto">
               {selectedStep.detail_desc}
 
               <div className="flex flex-col">
@@ -228,15 +391,18 @@ export default function Progress() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                   {selectedStep.links.map((link, index) => (
                     <div key={index}>
                       <button
-                        className="flex gap-3 items-center shadow-md w-full h-full p-2 rounded-lg hover:shadow-lg cursor-pointer"
+                        className="group flex gap-3 items-center justify-between border-1 border-gray-300 hover:border-gray-400 w-full h-full p-2 rounded-lg transition cursor-pointer"
                         onClick={() => window.open(link.file)}
                       >
-                        <CiFileOn className="size-5 text-green-600 shrink-0 mb-1" />
-                        <span className="text-left">{link.name}</span>
+                        <div className="flex gap-3 items-center">
+                          <CiFileOn className="size-5 text-green-600 shrink-0" />
+                          <span className="text-left">{link.name}</span>
+                        </div>
+                        <Download className="size-5 shrink-0 text-gray-400 group-hover:text-gray-500"></Download>
                       </button>
                     </div>
                   ))}
